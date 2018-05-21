@@ -27,6 +27,7 @@ var colorArray = [
     '#103339'
 ];
 
+console.log("Test");
 
 
 // var bubbleSound = new sound("bubble.wav");
