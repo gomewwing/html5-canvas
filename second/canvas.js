@@ -12,7 +12,7 @@ var mouse = {
     y: innerHeight / 2
 };
 
-var colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
+var colors = ['#A8E6CF', '#DCEDC1', '#FFD3B6', '#FFAAA5', '#FF8B94'];
 
 var gravity = 1;
 var friction = 0.99;
@@ -79,8 +79,8 @@ function Ball(x, y, dx, dy, radius, color) {
     this.draw = function () {
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        c.fillStyle = this.color;
-        c.strokeStyle = this.color;
+        c.fillStyle = colors[this.color];
+        c.strokeStyle = colors[this.color];
         c.fill();
         c.stroke();
         c.closePath();
@@ -98,8 +98,10 @@ function init() {
         var y = randomIntFromRange(0, canvas.height - radius);
         var dx = randomIntFromRange(-2,2);
         var dy = randomIntFromRange(-2,2);
-        var color = 'rgba('+randomColor(255)+','+randomColor(255)+','+randomColor(255)+','+0.8+')';
-        console.log(randomColor(255));
+        var color = randomColor(5);
+        console.log(color);
+        // var color = 'rgba('+randomColor(255)+','+randomColor(255)+','+randomColor(255)+','+0.8+')';
+        // console.log(randomColor(255));
         ballArray.push(new Ball(x, y, dx, dy, radius, color));
 
     }
