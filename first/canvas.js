@@ -20,11 +20,11 @@ window.addEventListener('resize', function(){
 var maxRadius = 40;
 // var minRadius = 2;
 var colorArray = [
-    '#C42F59',
-    '#7B3551',
-    '#5E3F50',
-    '#264750',
-    '#103339'
+    '#FFE56A',
+    '#FDA47A',
+    '#FEAEA3',
+    '#FF9A65',
+    '#FFE1C2'
 ];
 
 console.log("Test");
@@ -134,7 +134,7 @@ var circleArray = [];
 function init(){
     circleArray = [];
 
-    for (var i=0;i<800;i++){
+    for (var i=0;i<1000;i++){
         
         var red = Math.floor(Math.random() * 255);
         var green =Math.floor(Math.random() * 255);

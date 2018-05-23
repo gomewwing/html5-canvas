@@ -99,7 +99,6 @@ function init() {
         var dx = randomIntFromRange(-2,2);
         var dy = randomIntFromRange(-2,2);
         var color = randomColor(5);
-        console.log(color);
         // var color = 'rgba('+randomColor(255)+','+randomColor(255)+','+randomColor(255)+','+0.8+')';
         // console.log(randomColor(255));
         ballArray.push(new Ball(x, y, dx, dy, radius, color));
