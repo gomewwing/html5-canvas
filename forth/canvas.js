@@ -54,13 +54,21 @@ function distance(x1, y1, x2, y2) {
 
  
 // Objects 
-function Object(x, y, radius, color) { 
+function Particle(x, y, radius, color) { 
     this.x = x 
     this.y = y 
     this.radius = radius 
     this.color = color 
+    this.radians = Math.random()*Math.PI * 2;
+    this.velocity = 0.05;
+    this.distanceFromCenter=randomIntFromRange(50,120);
+        
 
     this.update = function() { 
+        //Move points over time
+        this.radians += this.velocity;
+        this.x = x+Math.cos(this.radians)*this.distanceFromCenter;
+        this.y = y+Math.sin(this.radians)*this.distanceFromCenter;
         this.draw() 
     } 
      
@@ -79,27 +87,28 @@ function Object(x, y, radius, color) {
  
  
 // Implementation 
-let objects 
+let particles 
 function init() { 
-    objects = [] 
+    particles = [] 
 
  
-    for (let i = 0; i < 400; i++) { 
-        // objects.push(); 
+    for (let i = 0; i < 50; i++) { 
+        particles.push(new Particle(canvas.width/2, canvas.height/2,5,'blue'));
+        
     } 
+    console.log(particles);
 } 
 
  
 // Animation Loop 
 function animate() { 
     requestAnimationFrame(animate) 
-    c.clearRect(0, 0, canvas.width, canvas.height) 
+    c.fillStyle = 'rgba(255,255,255,0.05)';
+    c.fillRect(0, 0, canvas.width, canvas.height) ;
 
- 
-    c.fillText('HTML CANVAS BOILERPLATE', mouse.x, mouse.y) 
-    // objects.forEach(object => { 
-    //  object.update(); 
-    // }); 
+    particles.forEach(function (particle) {
+        particle.update();
+    });
 } 
 
  
