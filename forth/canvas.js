@@ -14,7 +14,7 @@ const mouse = {
 } 
  
  
-const colors = ['#00bdff', '#4d39ce', '#088eff'] 
+const colors = ['#E37B40', '#46B29D', '#DE5B49', '#324D5C', '#F0CA4D'] 
 
  
 // Event Listeners 
