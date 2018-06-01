@@ -122,20 +122,21 @@ function Rects(x, y,i) {
     this.color = 'rgba(255,255,255,'+Math.random(0.5,1)+')';
 
     this.update = function() { 
-        this.draw() 
+        // this.draw() 
+        setInterval(this.draw(),10);
     } 
      
-     
+    
     this.draw = function() { 
         c.beginPath() 
         c.rect(this.x_i, this.y_i, this.x, this.y); 
         c.fillStyle = this.color 
         c.fill() 
 
- 
 
         c.closePath() 
         
+
     } 
 } 
 
@@ -154,7 +155,6 @@ function init() {
         rc.push(new Rects(10,10,i));
     }
  
-    
 
 } 
 
@@ -170,14 +170,19 @@ function animate() {
     //     rc.update();
     // }
    
+    
 
     // c.fillText('HTML CANVAS BOILERPLATE', mouse.x, mouse.y) 
     if (startrect == true){
-       for(let i=0; i<xi ;i++){
-           rc[i].update();
-       }
-       xi+=2;
+        if (xi < canvas.width){
+            xi+=1;
+        }
+        for(let i=0; i<xi ;i++){
+            rc[i].update();
+        }
+
     }
+
   
 } 
 
